@@ -25,6 +25,12 @@ export default function ModalUpdate({ id, s }) {
         router.post(`/updateStudent/${s.student_id}`, {
             _method: "patch",
             ...editData,
+        }, {
+            onSuccess: () => {
+                document
+                    .getElementById(`my_modal_3${s.student_id}`)
+                    .close()
+            }
         });
     };
 

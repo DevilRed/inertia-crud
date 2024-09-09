@@ -17,7 +17,9 @@ export default function AddStudentButton({ className = "", disabled }) {
         e.preventDefault();
 
         router.post("/addStudent", data, {
-            onSuccess: () => {},
+            onSuccess: () => {
+                document.getElementById('my_modal_2').close();
+            },
         });
     };
 
