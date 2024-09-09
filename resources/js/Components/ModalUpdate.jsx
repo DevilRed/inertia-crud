@@ -1,8 +1,8 @@
 import InputError from "@/Components/InputError";
 import InputLabel from "@/Components/InputLabel";
 import TextInput from "@/Components/TextInput";
-import { useForm } from "@inertiajs/react";
-import { Inertia } from "@inertiajs/inertia";
+import { useForm, router } from "@inertiajs/react";
+// import { Inertia } from "@inertiajs/inertia";
 
 export default function ModalUpdate({ id, s }) {
     const {
@@ -22,7 +22,7 @@ export default function ModalUpdate({ id, s }) {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        Inertia.post(`/updateStudent/${s.student_id}`, {
+        router.post(`/updateStudent/${s.student_id}`, {
             _method: "patch",
             ...editData,
         });

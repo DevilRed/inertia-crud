@@ -1,5 +1,5 @@
-import { useForm } from "@inertiajs/react";
-import { Inertia } from "@inertiajs/inertia";
+import { useForm, router } from "@inertiajs/react";
+// import { Inertia } from "@inertiajs/inertia";
 
 export default function ModalDelete({ id, s }) {
     const {
@@ -18,7 +18,7 @@ export default function ModalDelete({ id, s }) {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        Inertia.post(`/deleteStudent/${deleteData.student_id}`, {
+        router.post(`/deleteStudent/${deleteData.student_id}`, {
             _method: "delete",
             ...deleteData,
         });
